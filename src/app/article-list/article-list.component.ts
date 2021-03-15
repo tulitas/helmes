@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 import {Article} from '../models/article/article';
 import {ArticleService} from '../services/article/article.service';
 import {Router} from '@angular/router';
@@ -10,15 +10,23 @@ import {Router} from '@angular/router';
 })
 export class ArticleListComponent implements OnInit {
   articles: Observable<Article[]>;
+  num: string;
 
   constructor(private articleService: ArticleService,
               private router: Router) { }
 
+  // tslint:disable-next-line:typedef
   ngOnInit(){
 this.reloadData();
   }
 
+  // tslint:disable-next-line:typedef
   private reloadData() {
   this.articles = this.articleService.getArticleList();
+  }
+  // tslint:disable-next-line:typedef
+  getArticlesByNum(num: string){
+    this.articles = this.articleService.getArticlesByNum(num);
+
   }
 }

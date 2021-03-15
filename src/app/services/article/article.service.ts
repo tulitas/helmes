@@ -11,4 +11,7 @@ export class ArticleService {
   getArticleList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
+  getArticlesByNum(num: string): Observable<any>{
+    return this.http.get(`${this.baseUrl}/${num}`);
+  }
 }
