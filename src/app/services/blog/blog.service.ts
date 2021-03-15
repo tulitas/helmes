@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ArticleService {
+export class BlogService {
   private baseUrl = 'https://www.spaceflightnewsapi.net/api/v2/articles';
   constructor(private http: HttpClient) { }
 
-  getArticleList(): Observable<any> {
+  getBlogList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
 }

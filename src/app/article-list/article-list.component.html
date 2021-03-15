@@ -1,23 +1,37 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h2>Article List</h2>
+    <div>
+      <input type="number" placeholder="articles to display" pattern="\d [0-9]">
+      <input type="submit" value="sort">
+    </div>
   </div>
-  <div class="panel-body">
-    <table class="table table-striped">
+  <div class="table-responsive">
+    <table class="table table-striped" style="font-size: 12px">
       <thead>
       <tr>
         <th>Id</th>
         <th>Title</th>
-
+        <th>Image URL</th>
+        <th>News Site</th>
+        <th >Summary</th>
+        <th >URL</th>
+        <th>Published</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let article of articles | async">
-        <td>{{article.id}}</td>
+        <td style="font-size: 8px">{{article.id}}</td>
         <td>{{article.title}}</td>
-
+        <td><a href="{{article.imageUrl}}"><img src="{{article.imageUrl}}" alt="">image</a></td>
+        <td >{{article.newsSite}}</td>
+        <td style="word-break: break-word">{{article.summary}}</td>
+        <td><a href="{{article.url}}">URL</a></td>
+        <td>{{article.published}}</td>
       </tr>
       </tbody>
     </table>
   </div>
 </div>
+
+

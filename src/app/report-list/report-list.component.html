@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Report List</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-striped" style="font-size: 12px">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Image URL</th>
+        <th>News Site</th>
+        <th>Summary</th>
+        <th>URL</th>
+        <th>Published</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let report of reports | async">
+        <td style="font-size: 8px">{{report.id}}</td>
+        <td>{{report.title}}</td>
+        <td><a href="{{report.imageUrl}}"><img src="{{report.imageUrl}}" alt="">image</a></td>
+        <td>{{report.newsSite}}</td>
+        <td style="word-break: break-word">{{report.summary}}</td>
+        <td><a href="{{report.url}}">URL</a></td>
+        <td>{{report.published}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
