@@ -13,7 +13,6 @@ export class ArticleService {
     return this.http.get(`${this.baseUrl}`);
   }
   getArticlesByNum(num: string): Observable<any>{
-    console.log(num);
     return this.http.get(`${this.baseUrl1}${num}`);
   }
 }
