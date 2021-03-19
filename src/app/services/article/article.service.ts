@@ -5,13 +5,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ArticleService {
-  private baseUrl = 'https://www.spaceflightnewsapi.net/api/v2/blogs';
+  private baseUrl = 'https://test.spaceflightnewsapi.net/api/v2/articles';
+  private baseUrl1 = 'https://test.spaceflightnewsapi.net/api/v2/articles?_limit=';
   constructor(private http: HttpClient) { }
 
   getArticleList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
   getArticlesByNum(num: string): Observable<any>{
-    return this.http.get(`${this.baseUrl}/${num}`);
+    console.log(num);
+    return this.http.get(`${this.baseUrl1}${num}`);
   }
 }

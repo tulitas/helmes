@@ -25,8 +25,8 @@ this.reloadData();
   this.articles = this.articleService.getArticleList();
   }
   // tslint:disable-next-line:typedef
-  getArticlesByNum(num: string){
-    this.articles = this.articleService.getArticlesByNum(num);
+  getArticlesByNum(){
+    this.articles = this.articleService.getArticlesByNum(this.num);
 
   }
 }

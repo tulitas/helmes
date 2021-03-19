@@ -1,11 +1,15 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h2>Article List</h2>
-<form>
-    <div>
-      <input type="number" placeholder="articles to display" pattern="[0-9]" name="num" id="num">
-      <button (click)="getArticlesByNum(num)" class="btn btn-info" style="margin-left: 10px" type="submit">Get Articles</button>
-    </div>
+    <form>
+      <div>
+        <input [(ngModel)]="num" type="number"
+               placeholder="articles to display"
+               pattern="[0-9]"
+               name="num" id="num"
+        (keyup.enter)="getArticlesByNum()">
+        <button (click)="getArticlesByNum()" class="btn btn-info" style="margin-left: 10px" type="submit">Get Articles</button>
+      </div>
     </form>
   </div>
   <div class="table-responsive">
@@ -16,8 +20,8 @@
         <th>Title</th>
         <th>Image URL</th>
         <th>News Site</th>
-        <th >Summary</th>
-        <th >URL</th>
+        <th>Summary</th>
+        <th>URL</th>
         <th>Published</th>
       </tr>
       </thead>
@@ -26,7 +30,7 @@
         <td style="font-size: 8px">{{article.id}}</td>
         <td>{{article.title}}</td>
         <td><a href="{{article.imageUrl}}"><img src="{{article.imageUrl}}" alt="">image</a></td>
-        <td >{{article.newsSite}}</td>
+        <td>{{article.newsSite}}</td>
         <td style="word-break: break-word">{{article.summary}}</td>
         <td><a href="{{article.url}}">URL</a></td>
         <td>{{article.published}}</td>
