@@ -7,8 +7,9 @@
                placeholder="articles to display"
                pattern="[0-9]"
                name="num" id="num"
-        (keyup.enter)="getArticlesByNum()">
-        <button (click)="getArticlesByNum()" class="btn btn-info" style="margin-left: 10px" type="submit">Get Articles</button>
+               (keyup.enter)="getArticlesByNum()">
+        <button (click)="getArticlesByNum()" class="btn btn-info" style="margin-left: 10px" type="submit">Get Articles
+        </button>
       </div>
     </form>
   </div>
@@ -26,7 +27,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let article of articles | async">
+            <tr *ngFor="let article of articles | async">
         <td style="font-size: 8px">{{article.id}}</td>
         <td>{{article.title}}</td>
         <td><a href="{{article.imageUrl}}"><img src="{{article.imageUrl}}" alt="">image</a></td>
@@ -39,5 +40,6 @@
     </table>
   </div>
 </div>
+
 
 

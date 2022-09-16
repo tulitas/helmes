@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ReportService {
-  private baseUrl = 'https://www.spaceflightnewsapi.net/api/v2/reports';
+  private baseUrl = 'https://api.spaceflightnewsapi.net/v3/reports';
   constructor(private http: HttpClient) { }
 
   getReportList(): Observable<any> {

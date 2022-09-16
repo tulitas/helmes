@@ -1,7 +1,7 @@
 export class Blog {
   id: string;
   title: string;
-  url: string;
+  body: string;
   imageUrl: string;
   newsSite: string;
   summary: string;

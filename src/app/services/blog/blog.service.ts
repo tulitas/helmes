@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BlogService {
-  private baseUrl = 'https://www.spaceflightnewsapi.net/api/v2/articles';
+  private baseUrl = 'https://api.spaceflightnewsapi.net/v3/blogs';
   constructor(private http: HttpClient) { }
 
   getBlogList(): Observable<any> {

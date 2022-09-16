@@ -7,6 +7,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { ReportListComponent } from './report-list/report-list.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ReportListComponent } from './report-list/report-list.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

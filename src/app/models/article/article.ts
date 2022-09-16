@@ -1,6 +1,6 @@
 export class Article {
 id: string;
-username: string;
+title: string;
 url: string;
 imageUrl: string;
 newsSite: string;

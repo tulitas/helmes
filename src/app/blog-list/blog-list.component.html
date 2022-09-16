@@ -8,22 +8,16 @@
       <tr>
         <th>Id</th>
         <th>Title</th>
-        <th>Image URL</th>
-        <th>News Site</th>
-        <th>Summary</th>
-        <th>URL</th>
-        <th>Published</th>
+        <th>body</th>
+
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let blog of blogs | async">
         <td style="font-size: 8px">{{blog.id}}</td>
         <td>{{blog.title}}</td>
-        <td><a href="{{blog.imageUrl}}"><img src="{{blog.imageUrl}}" alt="">image</a></td>
-        <td>{{blog.newsSite}}</td>
-        <td style="word-break: break-word">{{blog.summary}}</td>
-        <td><a href="{{blog.url}}">URL</a></td>
-        <td>{{blog.published}}</td>
+        <td>{{blog.body}}</td>
+
       </tr>
       </tbody>
     </table>
