@@ -1,17 +1,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h2>Article List</h2>
-    <form>
-      <div>
-        <input [(ngModel)]="num" type="number"
-               placeholder="articles to display"
-               pattern="[0-9]"
-               name="num" id="num"
-               (keyup.enter)="getArticlesByNum()">
-        <button (click)="getArticlesByNum()" class="btn btn-info" style="margin-left: 10px" type="submit">Get Articles
-        </button>
-      </div>
-    </form>
+
   </div>
   <div class="table-responsive">
     <table class="table table-striped" style="font-size: 12px">
@@ -27,7 +17,8 @@
       </tr>
       </thead>
       <tbody>
-            <tr *ngFor="let article of articles | async">
+      <tr *ngFor="let article of articles | paginate: { itemsPerPage: count, currentPage: p }">
+        <!--            <tr *ngFor="let article of articles | async">-->
         <td style="font-size: 8px">{{article.id}}</td>
         <td>{{article.title}}</td>
         <td><a href="{{article.imageUrl}}"><img src="{{article.imageUrl}}" alt="">image</a></td>
@@ -38,6 +29,9 @@
       </tr>
       </tbody>
     </table>
+  </div>
+  <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 </div>
 

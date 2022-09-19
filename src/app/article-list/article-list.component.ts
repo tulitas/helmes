@@ -9,8 +9,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./article-list.component.css'],
 })
 export class ArticleListComponent implements OnInit {
-  articles: Observable<Article[]>;
+  articles: Article[];
   num: string;
+  p: number = 1;
+  count: number = 5;
 
   constructor(private articleService: ArticleService,
               private router: Router) { }
@@ -22,11 +24,8 @@ this.reloadData();
 
   // tslint:disable-next-line:typedef
   private reloadData() {
-  this.articles = this.articleService.getArticleList();
-  }
-  // tslint:disable-next-line:typedef
-  getArticlesByNum(){
-    this.articles = this.articleService.getArticlesByNum(this.num);
-
+    this.articleService.getArticleList().subscribe((data) => {
+      this.articles = data;
+    });
   }
 }
